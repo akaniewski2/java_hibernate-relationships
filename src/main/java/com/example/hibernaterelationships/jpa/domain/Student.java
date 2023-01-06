@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Setter
@@ -16,6 +15,7 @@ import java.util.Date;
 public class Student {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
 //    @Temporal(TemporalType.DATE)
@@ -41,6 +41,7 @@ public class Student {
     public Long id() {
         return id;
     }
+
 
 
 }

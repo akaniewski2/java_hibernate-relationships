@@ -1,11 +1,10 @@
 package com.example.hibernaterelationships.jpa.domain;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.List;
+ import jakarta.persistence.*;
+        import lombok.Getter;
+        import lombok.NoArgsConstructor;
+        import lombok.Setter;
+        import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -13,6 +12,7 @@ import java.util.List;
 @Getter
 public class Teacher {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String firstName;
     private String lastname;
@@ -23,7 +23,7 @@ public class Teacher {
 //    private List<Course> courses;
 
     //II - werja
-    @OneToMany(mappedBy = "teacher")
+    @OneToMany(mappedBy = "teacher",cascade = CascadeType.PERSIST)
     private List<Course> courses;
 
 
