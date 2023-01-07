@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Setter
@@ -25,6 +26,8 @@ public class Student {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    private String firstName;
+    private String lastName;
     @Convert(converter = YesNoBooleanConverter.class)
     private boolean wantsNewsletter;
 
@@ -37,10 +40,21 @@ public class Student {
    // })
     private Address address;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="STUDENTS_COURSES",
+            joinColumns = @JoinColumn(name="COURSE_ID",referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name="STUDENT_ID",referencedColumnName ="ID" )
+    )
+    private List<Course> courses;
+  //  private List<Student> students;
 
     public Long id() {
         return id;
     }
+
+
+
 
 
 

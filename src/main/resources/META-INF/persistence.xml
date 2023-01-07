@@ -6,9 +6,11 @@
 
 
     <persistence-unit name="guide-to-jpa-with-hibernate">
-        <class>com.example.hibernaterelationships.jpa.domain.Student</class>
-        <class>com.example.hibernaterelationships.jpa.domain.Teacher</class>
-        <class>com.example.hibernaterelationships.jpa.domain.Course</class>
+<!--        <class>com.example.hibernaterelationships.jpa.domain.Student</class>-->
+<!--        <class>com.example.hibernaterelationships.jpa.domain.Teacher</class>-->
+<!--        <class>com.example.hibernaterelationships.jpa.domain.Course</class>-->
+<!--        <class>com.example.hibernaterelationships.jpa.domain.Course</class>-->
+<!--        <class>com.example.hibernaterelationships.jpa.domain.Course</class>-->
 
         <class>com.example.hibernaterelationships.jpa.domain.converters.YesNoBooleanConverter</class>
 

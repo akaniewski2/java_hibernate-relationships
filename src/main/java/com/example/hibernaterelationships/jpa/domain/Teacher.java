@@ -15,7 +15,7 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String firstName;
-    private String lastname;
+    private String lastName;
 
     //    I - wersja join column jest w Teacher, a w Course nie ma odwołania do Teacher
 //    @OneToMany(cascade = CascadeType.ALL)

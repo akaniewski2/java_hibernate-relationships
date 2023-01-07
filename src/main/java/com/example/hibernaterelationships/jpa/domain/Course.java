@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -31,6 +32,19 @@ public class Course {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST,optional = false /*optional = false nie pozowli zapisac course bez teacher */)
     @JoinColumn(name = "TEACHER_ID", referencedColumnName = "ID")
     private Teacher teacher;
+
+    @OneToOne(mappedBy = "course",cascade = CascadeType.PERSIST)
+    private CourseMaterial courseMaterial;
+
+    @ManyToMany(mappedBy = "courses")
+    private List<Student> students = new ArrayList<>();
+
+    public void addStudent(Student student) {
+        this.students.add(student);
+    }
+
+
+
 
 
 }
