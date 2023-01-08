@@ -36,7 +36,7 @@ public class Course {
     @OneToOne(mappedBy = "course",cascade = CascadeType.PERSIST)
     private CourseMaterial courseMaterial;
 
-    @ManyToMany(mappedBy = "courses")
+    @ManyToMany(mappedBy = "courses",cascade = CascadeType.ALL)
     private List<Student> students = new ArrayList<>();
 
     public void addStudent(Student student) {

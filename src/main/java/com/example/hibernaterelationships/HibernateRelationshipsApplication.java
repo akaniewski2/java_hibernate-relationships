@@ -161,6 +161,35 @@ public class HibernateRelationshipsApplication {
 //			em.persist(course);
 
 
+		//--- EMPLOYEE-PROJECT
+
+		Employee employee1 = new Employee();
+		employee1.setFistrName("e1");
+		employee1.setLastName("e1");
+
+		Employee employee2 = new Employee();
+		employee1.setFistrName("e2");
+		employee1.setLastName("e2");
+
+
+
+		Project project1 = new Project();
+		project1.setName("p1");
+
+		Project project2 = new Project();
+		project2.setName("p2");
+
+
+		employee1.addProject(project1);
+		employee1.addProject(project2);
+
+		employee2.addProject(project1);
+		employee2.addProject(project2);
+
+		em.persist(employee1);
+		em.persist(employee2);
+
+
 		em.getTransaction().commit();
         em.clear();
 
