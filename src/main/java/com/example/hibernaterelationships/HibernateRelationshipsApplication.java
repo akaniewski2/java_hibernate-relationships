@@ -163,6 +163,9 @@ public class HibernateRelationshipsApplication {
 
 		//--- EMPLOYEE-PROJECT
 
+		// I  sposowb , zapisuje employee z dodanymi najpierw projects ,
+		// wniosek : wyglada na to ze zapisuje relację ,gdy zapisywana jest  clase w której jest @joinColumn (employee), ale nie zapisuje tej z mappedBy (project)
+
 		Employee employee1 = new Employee();
 		employee1.setFistrName("e1");
 		employee1.setLastName("e1");
@@ -188,6 +191,31 @@ public class HibernateRelationshipsApplication {
 
 		em.persist(employee1);
 		em.persist(employee2);
+
+		// II sposowb , zapisuje project z dodanymi najpierw employees  (ale to nie dziala)
+
+		Project project3 = new Project();
+		project3.setName("p3");
+
+
+		Employee employee4 = new Employee();
+		employee4.setFistrName("e4");
+		employee4.setLastName("e4");
+
+		Employee employee5 = new Employee();
+		employee5.setFistrName("e5");
+		employee5.setLastName("e5");
+
+
+		project3.addEmployee(employee4);
+		project3.addEmployee(employee5);
+
+		//em.persist(employee4);
+		//em.persist(employee5);
+		em.persist(project3);
+
+
+
 
 
 		em.getTransaction().commit();
