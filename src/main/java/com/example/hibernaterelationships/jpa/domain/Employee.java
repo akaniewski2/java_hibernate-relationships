@@ -37,7 +37,7 @@ public class Employee {
 //    @ManyToMany(mappedBy = "employees",cascade = CascadeType.ALL)
 //    private Set<Project> projects= new HashSet<>();
 
-//  -- IIb wersja - DZIAŁA !! ZAPISUJE W DWIE STRONY
+//  -- IIb wersja - DZIAŁA !! ZAPISUJE W DWIE STRONY klasa EMPLOYEE - PROJECT
 
         @ManyToMany( cascade = CascadeType.ALL)
         @JoinTable(

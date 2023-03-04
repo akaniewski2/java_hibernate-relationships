@@ -22,7 +22,7 @@ public class Project {
 //    @ManyToMany(mappedBy = "projects",cascade = CascadeType.PERSIST)
 //    private Set<Employee> employees = new HashSet<>();
 
-    //--IIb wersja - DZIAŁA !! ZAPISUJE W DWIE STRONY
+    //--IIb wersja - DZIAŁA !! ZAPISUJE W DWIE STRONY klasa EMPLOYEE - PROJECT
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name="EMLOYEE_PROJECT",
